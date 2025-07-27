@@ -2,133 +2,216 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sahil Kawale | Cybersecurity & Engineering Portfolio</title>
+  <title>Sahil Kawale | Offensive Security Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="description" content="Portfolio of Sahil Kawale, a Computer Engineering student specializing in Cybersecurity, Java, databases, ethical hacking, and backend development.">
-  <meta name="keywords" content="Sahil Kawale, Cybersecurity, Computer Engineering, Java Developer, Portfolio, Ethical Hacking, Backend, Security, Student, Mumbai">
-  <meta property="og:title" content="Sahil Kawale | Cybersecurity & Engineering Portfolio">
-  <meta property="og:description" content="Aspiring cybersecurity professional and Computer Engineering student. Explore my projects, skills, and journey.">
+  <meta name="description" content="Portfolio of Sahil Kawale – Offensive Security Practitioner & Computer Engineering Student. Specialized in Penetration Testing, Red Teaming, Ethical Hacking, Cybersecurity Research, and Reverse Engineering.">
+  <meta name="keywords" content="Offensive Security, Sahil Kawale, Penetration Tester, Cybersecurity, Red Teaming, Ethical Hacker, Portfolio, CTF, Malware Analysis, Mumbai">
+  <meta property="og:title" content="Sahil Kawale | Offensive Security Portfolio">
+  <meta property="og:description" content="Break, analyze, defend — a portfolio for Cybersecurity Red Team, PenTesting & Ethical Hacking.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.linkedin.com/in/sahil-kawale-116120280">
-  <meta property="og:image" content="https://randomuser.me/api/portraits/men/5.jpg">
+  <meta property="og:image" content="YOUR_LINKEDIN_PHOTO_URL_HERE">
   <link rel="canonical" href="https://www.linkedin.com/in/sahil-kawale-116120280">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Open+Sans:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
-    html,body { margin:0; padding:0; font-family: 'Open Sans', Arial,sans-serif; background:#f8fafc; scroll-behavior:smooth;}
-    header { position:relative; z-index:1; }
-    .parallax-hero {
+    :root {
+      --bg-main: #10141b;
+      --bg-secondary: #181e25;
+      --neon-blue: #00ffe7;
+      --neon-green: #52ff6e;
+      --glitch: #03dac5;
+      --accent: #d90429;
+      --text-main: #ececec;
+      --text-muted: #74b2ff;
+      --shadow: 0 9px 30px #00fff955;
+    }
+    html,body {
+      scroll-behavior: smooth;
+      margin: 0; padding: 0;
+      background: var(--bg-main);
+      color: var(--text-main);
+      font-family: 'Fira Mono', monospace;
       min-height: 100vh;
-      background: linear-gradient(rgba(25,50,80,.75),rgba(18,38,57,.78)),url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80') 50% 50%/cover fixed no-repeat;
-      display:flex; flex-direction:column; align-items:center; justify-content:center; color:#fff; text-align:center;
-      overflow:hidden; position:relative;
     }
+    body {overflow-x:hidden;}
+
+    /* Parallax + Terminal Code */
+    .parallax-hero {
+      min-height: 100vh; width:100vw;
+      background: linear-gradient(106deg, #022c43 30%,#0e202e 100%),url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80') center/cover fixed no-repeat;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position:relative; z-index:1; overflow: hidden;
+    }
+    .pseudo-terminal {
+      font-family: 'Fira Mono', monospace;
+      color: var(--neon-blue);
+      background: rgba(12,26,37,0.69);
+      border-radius: 18px;
+      box-shadow: 0 4px 80px #00ffe732, 0 0 9px #00e6e6;
+      font-size: 1.05em;
+      max-width: 650px;
+      margin: 24px auto 0;
+      padding: 22px 28px 15px;
+      min-height: 75px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      z-index: 3;
+    }
+    .pseudo-terminal:before {
+      content: "user@sahil:~$";
+      color: #59f8ef;
+      margin-right: 12px;
+    }
+    .blinking-cursor {
+      display:inline-block; width:12px; height:1.1em; vertical-align:middle;
+      background:var(--neon-blue);
+      animation: blink .7s steps(1) infinite alternate;
+      margin-left:0.3em; position:relative; top:2px;
+    }
+    @keyframes blink { to { opacity:0; } }
+
+    /* Hero Profile */
     .profile-img {
-      width:142px; height:142px; object-fit:cover; border-radius:50%; border:5px solid #fff;
-      box-shadow:0 8px 34px rgba(20,32,55,.20);
-      margin-bottom:30px; animation:popIn 1.2s cubic-bezier(.5,1.5,.6,1) both;
+      width:135px; height:135px; object-fit:cover; border-radius:50%;
+      border: 4px solid var(--glitch); box-shadow: 0 12px 37px #00ffe792;
+      margin-bottom: 30px; filter: grayscale(.17) brightness(1.12);
+      animation: popIn 1.35s cubic-bezier(.5,1.5,.6,1) both;
     }
-    @keyframes popIn {
-      0%{transform:scale(.5); opacity:0;}
-      70%{transform:scale(1.07);}
-      100%{transform:scale(1); opacity:1;}
+    @keyframes popIn { 0%{transform:scale(.6);opacity:0;} 72%{transform:scale(1.06);} 100%{transform:scale(1);opacity:1;} }
+    .hero-title {
+      font-size:2.5rem; font-family:'Montserrat',sans-serif; font-weight:700; letter-spacing:2px;
+      color: var(--neon-blue); text-shadow:0 2px 12px #00ffe788;
+      margin: 0 0 7px; animation: fadeUp 1.25s .36s both;
     }
-    .hero-title { font-family:'Montserrat',Arial,sans-serif; font-size:2.7rem; font-weight:700; letter-spacing:1.2px; margin:14px 0 10px;
-      animation:fadeUp 1.1s .5s both;
+    .hero-subtitle {
+      font-size:1.11em;
+      color: var(--neon-green);
+      margin-bottom: 4px; animation: fadeUp 1s .6s both;
+      font-family: 'Fira Mono', monospace;
+      letter-spacing: 1.5px;
     }
-    .hero-subtitle { font-size:1.25em; font-weight:500; color:#caf0f8; letter-spacing:.8px; margin:10px 0 0; animation:fadeUp 1.2s .7s both;}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(48px);}to{opacity:1;transform:none;}}
+    @keyframes fadeUp { from{ opacity:0; transform:translateY(60px);} to{ opacity:1; transform: none;} }
+    /* Animated Navigation */
     nav {
-      position:absolute; top:36px; left:50%; transform:translateX(-50%);
-      display:flex; gap:22px; background:rgba(30,45,62,0.56);
-      padding:7px 29px; border-radius:32px; box-shadow: 0 3px 18px #0d1b2a21; z-index:77;
-      animation:fadeInNav 1.1s .3s both;
+      position:absolute; top:40px; left:50%; transform:translateX(-50%);
+      display: flex; gap: 18px;
+      background: rgba(13,30,45,0.74); padding: 8px 32px 8px 28px;
+      border-radius: 30px; box-shadow: 0 3px 28px #38b6ff23;
+      z-index:77;
+      border: 1px solid var(--glitch);
     }
     nav a {
-      color:#fff; text-decoration:none; font-size:1em; font-family:'Montserrat',Arial; font-weight:500; transition:.18s color;
-      position:relative; letter-spacing:.3px; padding:7px 3px;
+      color:var(--neon-blue); text-decoration:none; font-weight:500;
+      font-family:'Montserrat',Arial,sans-serif; font-size:1.1em; letter-spacing:.2px; padding:7px 11px;
+      border-radius:19px; position:relative; overflow:hidden;
+      transition: background 0.13s, box-shadow .18s, color .19s;
     }
-    nav a:after {
-      content:""; display:block; width:0; height:2.5px; margin:2.5px auto 0;
-      background:#00b4d8; border-radius:2px; transition:width .21s;
+    nav a:hover, nav a:focus {
+      background: var(--neon-blue);
+      color: var(--bg-main);
+      box-shadow: 0 2px 22px #00ffe7b3;
+      outline: none;
     }
-    nav a:hover:after,nav a:focus:after{width:100%;}
-    nav a:hover {color:#00b4d8;}
-    @keyframes fadeInNav{from{opacity:0;transform:scale(0.7);}to{opacity:1;transform:none;}}
-
-    /* Section animation */
+    nav a:active {background: var(--accent); color:var(--bg-main);}
+    /* Glitch/Neon Section Animations */
     main section {
-      opacity:0; transform:translateY(65px); transition:.55s cubic-bezier(.47,.99,.32,1.1);
-      max-width:850px; margin:66px auto; z-index:8; background:#fff; border-radius:12px; box-shadow:0 7px 38px #0b192f0e;
-      padding:38px 34px; position:relative;
+      opacity:0; transform:translateY(80px) scale(.98);
+      transition: .7s cubic-bezier(.47,.87,.32,1.3);
+      max-width:900px; margin:75px auto 0; position:relative;
+      background: var(--bg-secondary);
+      border-radius:15px; box-shadow: var(--shadow);
+      padding:46px 44px 32px;
+      z-index:12;
+      border-left: 3.5px solid var(--neon-blue);
+      border-bottom: 2.8px solid var(--neon-blue);
     }
-    main section.visible {opacity:1; transform:none;}
-    section h2 {margin:0 0 18px; color:#26425a; font-family:'Montserrat',Arial; font-size:2.1em;}
-    .about p{font-size:1.17em; color:#14213d; line-height:1.7;}
+    main section.visible {
+      opacity: 1; transform: none;
+      box-shadow:0 5px 60px #00ffe74a;
+      /* Simple subtle glow reveal */
+      animation: glitch .8s cubic-bezier(.7,0,1,.88) alternate;
+    }
+    @keyframes glitch {
+      0% {box-shadow: 0 0 0 #00ffe77a, 0 0 0 var(--accent);}
+      15% {box-shadow: 0 0 40px #00ffe7be, 0 0 8px var(--accent);}
+      25% {box-shadow: 0 0 8px #00ffe7be, 0 0 18px var(--glitch);}
+      100%{box-shadow: 0 9px 54px #00ffe7bb;}
+    }
+    section h2 {
+      margin: 0 0 24px; color: var(--neon-blue); font-family:'Montserrat',Arial;
+      font-size:2.19em; text-shadow: 0 2px 16px #00e6e6dd;
+      text-transform:uppercase; letter-spacing:1.7px;
+    }
+    .about p{font-size:1.14em; color:var(--text-main); line-height:1.6;}
     /* Skills */
-    .skills-list{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:17px; margin:21px 0 0 0; padding:0; list-style:none;}
+    .skills-list {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(170px,1fr));
+      gap: 14px; margin:23px 0 0 0; padding: 0; list-style: none;
+    }
     .skills-list li {
-      background:#f2f6fa; border-radius:7px; color:#395171; padding:15px 0;
-      font-weight:600; font-size:1em; letter-spacing:.5px; text-align:center;
-      box-shadow:0 2px 8px #c2e9fb27; will-change:transform,opacity;
-      opacity:0; transform:translateY(20px) scale(.95);
-      animation:skillFade .8s forwards;
+      background: #191f2b linear-gradient(90deg,#272d3e,#16222a 55%);
+      border-radius: 8px; color: var(--text-muted); padding: 18px 0 0 0;
+      font-weight:600; font-size:1em; text-align:center;
+      box-shadow: 0 2px 15px #00e6e633;
+      min-height:82px;
+      position:relative; opacity:0; transform: translateY(20px) scale(.95);
+      animation: skillFade .7s forwards;
     }
-    .skills-list li:nth-child(1){animation-delay:.4s;}
-    .skills-list li:nth-child(2){animation-delay:.55s;}
-    .skills-list li:nth-child(3){animation-delay:.7s;}
-    .skills-list li:nth-child(4){animation-delay:.85s;}
-    .skills-list li:nth-child(5){animation-delay:1s;}
-    .skills-list li:nth-child(6){animation-delay:1.15s;}
-    @keyframes skillFade{from{opacity:0;transform:translateY(24px) scale(.95);}to{opacity:1;transform:none;}}
+    .skills-list li:nth-child(1){animation-delay:.34s;}
+    .skills-list li:nth-child(2){animation-delay:.56s;}
+    .skills-list li:nth-child(3){animation-delay:.64s;}
+    .skills-list li:nth-child(4){animation-delay:.7s;}
+    .skills-list li:nth-child(5){animation-delay:.81s;}
+    .skills-list li:nth-child(6){animation-delay:.94s;}
+    @keyframes skillFade {from{opacity:0;transform:translateY(24px) scale(.9);}to{opacity:1;transform:none;}}
+
+    .skill-icon {
+      width:30px;height:30px; margin-bottom: 9px;vertical-align:middle;filter:drop-shadow(0 5px 4px #00ffe7aa);
+      animation: fadeUp 1s both;
+    }
     /* Projects */
-    .projects-list{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:30px 0 0 0; list-style:none; padding:0;}
+    .projects-list{
+      display:grid;grid-template-columns:1fr 1fr;gap:20px;margin: 32px 0 0 0;padding:0;list-style:none;
+    }
     .project-card{
-      background:#f2f6fa;border-radius:9px;box-shadow:0 2px 12px #467bb614;
-      padding:21px 20px 17px;font-size:1em;color:#193755;position:relative;
-      transition:.18s transform, .18s box-shadow; cursor:pointer; will-change:transform;
-      opacity:0; transform: translateY(30px) scale(0.97);
-      animation:projectFade .6s forwards;
-      border-bottom:2px solid #00b4d8;
+      background:#151822 linear-gradient(100deg,#1c233a 60%,#181e25 100%);
+      border-radius: 10px; box-shadow: 0 1px 10px #00ffe70b;
+      padding: 18px 21px 15px; font-size:1.03em; color:#e2f1ff; position:relative;
+      transition:.19s transform; cursor:pointer; border-bottom: 2.5px solid var(--neon-blue);
+      opacity:0;transform:translateY(44px) scale(.97);
+      animation: projectFade .5s forwards;
     }
-    .project-card:nth-child(1){animation-delay:.5s;}
-    .project-card:nth-child(2){animation-delay:.7s;}
-    .project-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 6px 36px #00b4d81f; background:#e0f7fa;}
-    .project-card h3{margin:0 0 8px;font-size:1.11em;font-weight:700;color:#054b78;}
-    .project-card p{margin:0;font-size:1em;line-height:1.55;}
-    .project-card .tag{
-      display:inline-block;background:#caf0f8;color:#0466c8;
-      font-size:.85em;margin-top:10px;padding:3px 13px;
-      border-radius:6px;font-weight:600;
+    .project-card:nth-child(1){animation-delay:.36s;}
+    .project-card:nth-child(2){animation-delay:.49s;}
+    .project-card:hover{
+      transform: translateY(-8px) scale(1.03);
+      background: #051927 linear-gradient(112deg,#0c283d 50%, #130f2b 100%);
+      box-shadow: 0 8px 33px #00ffe77e,0 3px 13px #00e08380;
     }
-    @keyframes projectFade{from{opacity:0;transform:translateY(30px) scale(0.97);}to{opacity:1;transform:none;}}
+    .project-card h3{margin:0 0 8px;font-size:1.19em;font-weight:700;color:var(--neon-blue);}
+    .project-card p{margin:0;font-size:1em;color:#c3f0f7b5;}
+    .project-card .tag{display:inline-block;background:#01151f;color:var(--neon-green);font-size:.89em;margin-top:10px;padding:2.5px 14px 2.5px 9px;border-radius:5px;font-weight:500;letter-spacing:.4px;}
+    @keyframes projectFade {from{opacity:0;transform:translateY(28px) scale(.97);}to{opacity:1;transform:none;}}
 
-    /* Contact + Social */
-    .contact-list{list-style:none;padding:0;margin:15px 0 0 0;font-size:1.07em;}
-    .contact-list li{margin-bottom:10px;color:#2c3a54;line-height:1.5;}
-    .contact-list i{margin-right:9px;color:#2196f3;}
-    .contact-social { margin-top:13px;}
-    .contact-social a {
-      display:inline-block;border-radius:50%;background:#caf0f8;color:#0466c8;
-      width:36px;height:36px;line-height:36px;text-align:center;
-      font-size:1.2em;margin-right:8px;transition:.18s background;
-      box-shadow:0 3px 9px #00b4d83c;
-    }
-    .contact-social a:hover{background:#00b4d8;color:#fff;}
-
-    footer{max-width:840px;text-align:center;margin:48px auto 0;color:#557;}
-    /* Responsive */
-    @media(max-width: 1100px) { main section {max-width:97vw;} }
-    @media(max-width:900px) { .projects-list{grid-template-columns:1fr;}}
-    @media(max-width:690px){
-      .hero-title{font-size:1.5em;}
-      .parallax-hero{padding:32px 0;}
-      nav{padding:7px 8px;}
-      main section{padding:17px 7px;}
+    /* Contact */
+    .contact-list{list-style:none;padding:0;margin:18px 0 0 0;font-size:1.05em;}
+    .contact-list li{margin-bottom:12px;color:#c6ffff;line-height:1.4;}
+    .contact-list i{margin-right:12px;color:var(--neon-blue);}
+    .contact-social {margin-top:13px;}
+    .contact-social a {display:inline-block;border-radius:50%;background:#001119;color:var(--neon-blue);width:38px;height:38px;line-height:37px;text-align:center;font-size:1.34em;margin-right:10px;transition:.17s background, .17s color;box-shadow:0 1.8px 7px #00ffe737;}
+    .contact-social a:hover{background:var(--neon-blue);color:#001119;}
+    /* Footer */
+    footer{max-width:900px;text-align:center;margin:48px auto 0;color:#72d1de56;}
+    /* Responsiveness */
+    @media(max-width:950px) {main section{max-width:99vw;} .projects-list{grid-template-columns:1fr;}}
+    @media(max-width:630px){
+      .parallax-hero .hero-title { font-size: 1.28em;}
+      nav{padding:8px 6px;}
+      main section{padding: 17px 7px;}
+      .profile-img{width:91px;height:91px;}
     }
     @media(max-width:480px){
-      .profile-img{width:100px;height:100px;}
-      .projects-list{gap:7px;}
-      section h2{font-size:1.23em;}
+      section h2{font-size:1em;}
     }
   </style>
 </head>
@@ -141,51 +224,73 @@
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Sahil Kawale personal photo" class="profile-img" width="142" height="142"/>
-      <h1 class="hero-title">Sahil Kawale</h1>
-      <div class="hero-subtitle">Cybersecurity Enthusiast & Computer Engineering Student</div>
-      <meta itemprop="image" content="https://randomuser.me/api/portraits/men/5.jpg"/>
-      <meta itemprop="name" content="Sahil Kawale"/>
-      <meta itemprop="description" content="Cybersecurity & Computer Engineering Student, Mumbai, India"/>
+      <!-- Replace the src below with your LinkedIn profile photo URL! -->
+      <img src="YOUR_LINKEDIN_PHOTO_URL_HERE" alt="Sahil Kawale personal photo" class="profile-img">
+      <div class="hero-title" aria-label="Offensive Security Professional">Sahil Kawale</div>
+      <div class="hero-subtitle">Offensive Security | Red Team | Ethical Hacking</div>
+      <div class="pseudo-terminal">
+        <span id="typed-code"></span><span class="blinking-cursor"></span>
+      </div>
     </div>
   </header>
 
   <main>
     <section id="about" class="about" itemscope itemtype="https://schema.org/Person">
       <h2>About Me</h2>
-      <p itemprop="description">
-        Hi, I'm Sahil Kawale—a 3rd-year Computer Engineering student from Mumbai with robust skills in Java, software development, and database management. My true passion is cybersecurity: from ethical hacking and vulnerability detection to protecting digital systems and data. I'm always driven to solve problems, keep learning, and contribute to making technology safer and smarter. Currently seeking new learning opportunities and internships in cybersecurity & backend engineering.
+      <p>
+        <span style="color:var(--accent);font-weight:600;">// digital adversary, critical thinker, defender by offense</span><br>
+        Penetration Tester, Red Team Operator, and ethical hacker passionate about breaking, analyzing, and securing code and infrastructure. I’m driven by curiosity and powered by technical skills in exploit development, CTF solving, malware analysis, and backend programming. 
+        <br><br>
+        <strong>Currently:</strong> Third-year Computer Engineering student in Mumbai, exploring new vulnerabilities and crafting secure, resilient systems. Looking for red team internships, advanced training, or live project collaborations in cyber offensive security.
       </p>
     </section>
 
     <section id="skills" class="skills">
-      <h2>Skills & Expertise</h2>
+      <h2>Skills & Arsenal</h2>
       <ul class="skills-list" aria-label="Skills">
-        <li>Cyber Security</li>
-        <li>Ethical Hacking</li>
-        <li>C Programming / Java</li>
-        <li>Backend Development</li>
-        <li>Database Management</li>
-        <li>Troubleshooting</li>
+        <li>
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none"><path d="M7 3h10a2 2 0 0 1 2 2v2H5V5a2 2 0 0 1 2-2zm10 6v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9h14zm-7 3v4h2v-4h-2z" fill="#00ffe7"/></svg>
+          Penetration Testing
+        </li>
+        <li>
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#52ff6e" stroke-width="2"/><rect x="9" y="11" width="6" height="2" fill="#52ff6e"/></svg>
+          Red Team (Simulations)
+        </li>
+        <li>
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="10" rx="2" fill="#ffc107"/><path d="M7 11h10m-10 2h10" stroke="#273043" stroke-width="2"/></svg>
+          Reverse Engineering
+        </li>
+        <li>
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none"><path d="M16.24 7.76a6 6 0 1 1-8.48 8.48" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="#d90429"/></svg>
+          Malware Analysis
+        </li>
+        <li>
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="13" width="18" height="6" rx="2" fill="#17c3b2"/><rect x="7" y="5" width="10" height="6" rx="2" fill="#00b4d8"/></svg>
+          CTFs & Vulnerability Research
+        </li>
+        <li>
+          <svg class="skill-icon" viewBox="0 0 24 24" fill="none"><rect x="6" y="4" width="12" height="16" rx="2" fill="#e3e3e3"/><rect x="6" y="9" width="12" height="2" fill="#00ffe7"/></svg>
+          Secure Coding / Backend (C, Python, Java)
+        </li>
       </ul>
     </section>
 
     <section id="projects" class="projects">
-      <h2>Key Projects</h2>
+      <h2>Offensive Security Projects</h2>
       <ul class="projects-list" aria-label="Projects">
         <li class="project-card">
-          <h3>IRCTC Ticket Booking System</h3>
+          <h3>IRCTC PenTest Simulation</h3>
           <p>
-            Built an IRCTC railway ticket simulation system in C. Features secure login, booking, PNR & train info automation, and interactive menus.
+            Simulated end-to-end cyberattacks on a custom C-based IRCTC ticketing platform. Discovered and patched logic flaws in user authentication, input fuzzing, and privilege escalation. Resulted in new input sanitization and layered session control.
           </p>
-          <span class="tag">C Programming</span>
+          <span class="tag">Exploit Dev & Secure Coding</span>
         </li>
         <li class="project-card">
-          <h3>Cybersecurity Analyst Simulation</h3>
+          <h3>Adversarial Threat Lab (Virtual Internship)</h3>
           <p>
-            Completed scenario-based virtual internship simulating real-world threat analysis, risk assessments, and security policy formulation on advanced cyber defense tools.
+            Simulated real-world offensive tactics: ran vulnerability scans, analyzed threat vectors, escalated privileges, and crafted mitigation reports in live cyber labs using offense-first methodology and red-teaming tools.
           </p>
-          <span class="tag">Cybersecurity</span>
+          <span class="tag">Red Team, Threat Analysis</span>
         </li>
       </ul>
     </section>
@@ -195,9 +300,8 @@
       <ul class="contact-list">
         <li><i>📍</i> Mumbai, India</li>
         <li><i>📧</i> sahil.kawale911@gmail.com</li>
-        <li><i>📱</i> +91 8655357757</li>
         <li><i>🔗</i>
-          <a href="https://www.linkedin.com/in/sahil-kawale-116120280/" target="_blank" rel="noopener" aria-label="Sahil's LinkedIn profile" style="color:#0178d4;text-decoration:underline;">
+          <a href="https://www.linkedin.com/in/sahil-kawale-116120280/" target="_blank" rel="noopener" style="color:var(--neon-blue);text-decoration:underline;">
             LinkedIn Profile
           </a>
         </li>
@@ -209,25 +313,57 @@
       </div>
     </section>
   </main>
-
   <footer>
-    <small>Designed & coded by Sahil Kawale · &copy; 2025. All rights reserved.</small>
+    <small>Designed & coded by Sahil Kawale · &copy; 2025. Red Team Portfolio.</small>
   </footer>
-
   <script>
-    // Reveal sections and cards as you scroll
-    function animateOnView() {
-      document.querySelectorAll('main section').forEach(section=>{
-        const rect = section.getBoundingClientRect();
-        if(rect.top < window.innerHeight-70) section.classList.add('visible');
-      });
-      document.querySelectorAll('.skills-list li, .project-card').forEach(item=>{
-        const rect = item.getBoundingClientRect();
-        if(rect.top < window.innerHeight-80) item.style.opacity=1; // trigger their CSS animation
-      });
+    // Animated typing terminal pseudo-code
+    const terminalLines = [
+      'nmap -A internal_network',
+      'Found: open ports [22, 80, 3306] on 192.168.1.3',
+      'sqlmap -u "192.168.1.3/login" --dbs',
+      '[*] Dumped credentials: admin:0ff3ns3c!',
+      '>>> exploit.py --target 192.168.1.3',
+      '[+] Session opened as SYSTEM',
+      '[~] Report Generated: /root/findings/network-2025.pdf'
+    ];
+    let char = 0, line = 0, speed = 34;
+    function typeLine() {
+      if(line < terminalLines.length) {
+        let current = terminalLines[line];
+        let out = terminalLines.slice(0,line).join("<br>");
+        document.getElementById('typed-code').innerHTML = out + (char>0?'<br>':'') +
+          `<span style="color:#00fff5">${current.slice(0,char)}</span>`;
+        char++;
+        if(char <= current.length){
+          setTimeout(typeLine,speed+(Math.random()*28));
+        } else {
+          char=0; line++; setTimeout(typeLine,600+(Math.random()*120));
+        }
+      } else {
+        // after finished, blink with all lines visible
+        document.getElementById('typed-code').innerHTML = terminalLines.join("<br>");
+      }
     }
-    window.addEventListener('scroll', animateOnView);
-    window.addEventListener('load', animateOnView);
+    window.addEventListener('DOMContentLoaded',()=>{
+      typeLine();
+      animateSections();
+    });
+    // Reveal sections/cards as you scroll
+    function animateSections(){
+      function show(){
+        document.querySelectorAll('main section').forEach(section=>{
+          let rect = section.getBoundingClientRect();
+          if(rect.top < window.innerHeight-110) section.classList.add('visible');
+        });
+        document.querySelectorAll('.skills-list li,.project-card').forEach(item=>{
+          let rect = item.getBoundingClientRect();
+          if(rect.top < window.innerHeight-60) item.style.opacity=1;
+        });
+      }
+      window.addEventListener('scroll', show);
+      show();
+    }
   </script>
 </body>
 </html>
